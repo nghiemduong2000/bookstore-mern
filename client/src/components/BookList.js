@@ -43,7 +43,7 @@ const BookList = (props) => {
                     objectFit: "cover",
                     height: "100%",
                   }}
-                  src={`http://localhost:5000/${imageBook}`}
+                  src={`http://localhost:5000/public/${imageBook}`}
                   alt="Card image cap"
                 />
               </div>
