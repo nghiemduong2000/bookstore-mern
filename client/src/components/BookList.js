@@ -15,6 +15,7 @@ import {
 } from "reactstrap";
 
 const BookList = (props) => {
+  console.log(process.env);
   const dispatch = useDispatch();
   const { items } = props.item;
   useEffect(() => {
@@ -44,8 +45,9 @@ const BookList = (props) => {
                     height: "100%",
                   }}
                   src={
-                    `http://localhost:5000/public/${imageBook}` ||
-                    `https://bookstore-mern.herokuapp.com/public/${imageBook}`
+                    process.env.NODE_ENV === "development"
+                      ? `http://localhost:5000/public/${imageBook}`
+                      : `https://bookstore-mern.herokuapp.com/public/${imageBook}`
                   }
                   alt="Card image cap"
                 />
