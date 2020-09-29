@@ -44,7 +44,11 @@ const BookList = (props) => {
                     objectFit: "cover",
                     height: "100%",
                   }}
-                  src={`https://bookstore-mern.herokuapp.com/${imageBook}`}
+                  src={
+                    process.env.NODE_ENV === "development"
+                      ? `http://localhost:5000/${imageBook}`
+                      : `https://bookstore-mern.herokuapp.com/${imageBook}`
+                  }
                   alt="Card image cap"
                 />
               </div>
