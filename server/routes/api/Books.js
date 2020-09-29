@@ -21,7 +21,7 @@ Router.get("/", (req, res) => {
 Router.post("/", upload.single("imageBook"), (req, res) => {
   // const { name, author, description, language } = req.body;
   const { name, author, description, language } = req.body;
-  const imageBook = req.file.path.split("/").slice(1).join("/");
+  const imageBook = req.file.path;
 
   const newBook = new Book({
     name,
