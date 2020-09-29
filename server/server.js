@@ -26,7 +26,7 @@ app.use("/api/books", require("./routes/api/Books"));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use("/public", express.static(__dirname + "/public"));
+app.use("/public", express.static("public"));
 console.log(path.resolve("..", "client", "build", "index.html"));
 
 // Serve static assets if production
